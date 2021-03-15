@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area Grid</title>
+    <link rel="stylesheet" href="areaGrid.css">
+</head>
+<body>
+    <div class="grid">
+        <div class="red">Header</div>
+        <div class="red">Header</div>
+        <div class="blue">
+            <div>Content</div>
+            <div>Content</div>
+            <div>Content</div>
+            <div>Content</div>
+            <div>Content</div>
+            <div>Content</div>
+            <div>Content</div>
+        </div>
+        <div class="blue">Sidebar</div>
+        <div class="red">Footer</div>
+        <div class="red">Footer</div>
+        <div>Content</div>
+        <div>Content</div>
+        <div>Content</div>
+        <div>Content</div>
+        <div>Content</div>
+        <div>Content</div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div>
+        <p>Using grid-template-areas: "header header"
+                                      "content sidebar"
+                                      "footer footer";
+           The content can be named and placed according to a structured way.
+           <br>
+           The implicit grill are the lines added after the values that were 
+           declared, in this case until footer. The rest of content
+           is added to the implicit grill and it can be controlled with 
+           grid-auto-rows and grid-auto-flow.
+        </p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,4 @@
+la etiqueta <template> en HTML se usa para crear plantillas de 
+    HTML donde lo que esta dentro de estas no se va a mostrar 
+    sino hasta que se le especifique por medio de codigo. 
+

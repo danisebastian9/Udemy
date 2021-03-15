@@ -1,0 +1,21 @@
+Es cuando tenemos un usuario con un rol, como usuarion Anonimo, 
+    Usuario registrado o Administrador.
+     El Firewall una barrera entre los usuarios y los diferentes 
+     servicios de la aplicacion. por medio de este rol proveera
+     accesos a diferentes servicios de la aplicacion. 
+     En este caso: 
+        Usuario Anonimo, sera capaz de acceder a loguearse o crear
+        cuenta, el firewall no lo va a dejar tener acceso a ninguna
+        otra parte de la aplicacion. 
+
+        Usuario Registrado, sera capaz de acceder y realizarle 
+        peticiones a la aplicacion pero no podra acceder a todos
+        los servicios de la misma pues el firewall no lo va a dejar
+
+        Administrador, tendra completo acceso a todos los servicios
+        de la aplicacion como si el firewall no existiera para este. 
+
+        Si cualquier usuario intenta acceder a un servicio al cual 
+        no tiene acceso recibira un codigo 403 que significa forbidden
+
+

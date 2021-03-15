@@ -1,0 +1,27 @@
+body {
+    width: 200px;
+}
+
+.flex {
+    display: flex;
+    height: 200px;
+    flex-flow: row wrap;
+}
+
+.red {
+    background-color: red;
+}
+
+.first {
+    order: 1; 
+    /* default order is 0 giving it 1
+        will move the content at the 
+        end of any 0 ordered value */
+}
+
+.third {
+    order: -1;
+    /* Giving it -1 will move any content
+        to the beginning of any default
+        0 ordered value */
+}

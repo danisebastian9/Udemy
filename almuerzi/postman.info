@@ -1,0 +1,70 @@
+Con Postman vamos a testear el API y verificar que funcione. 
+
+Para empezar hacemos que inicie el app en local con vercel dev. 
+Luego en postman le damos click en el icono + de la segunda seccion de acciones. 
+
+En la barra GET, vamos a poner la ubicacion local donde se esta
+    corriendo la APP, en este caso localhost:3000/api/meals
+    que es donde esta corriendo la aplicacion. 
+
+testeamos un POST, vamos al header y agregamos: 
+Key: Content-type 
+Value: application/json
+
+Luego vamos a Body y seleccionamos "Raw" 
+y lo vamos a editar de manera que sea un objeto JSON. 
+    Propiedades con comillas dobles ""
+
+    {
+        "name": "hotdog",
+        "desc": "Perro caliente con mostaza"
+    }
+
+Y luego le damos send. 
+
+Nos devuelve un elemento de status 201, que significa elemento creado. 
+    Ademas del siguiente Objeto con un _id: 
+
+    {
+        "_id": "6023633fcdaa455140defb28",
+        "name": "hotdog",
+        "desc": "Perro caliente con mostaza",
+        "__v": 0
+    }
+
+Ahora vamos a buscar elementos de un id en especifico con GET.
+    Cambiamos de POST a get y en la URL /pegamos el id: 
+        6023633fcdaa455140defb28
+            localhost:3000/api/meals/6023633fcdaa455140defb28
+
+Y ahora nos devuelve 200 trayendonos el mismo objeto que se creo con POST. 
+
+Vamos a actualizar el elemento.
+    Lo cambiamos a PUT, y en el body agregamos: 
+    {
+        "name": "Hamburguer",
+        "desc": "Mayonesa, Mostaza, Queso y tocineta"
+    }
+
+Mantemenos el ID del usuario en la URL y le damos Send. 
+    tenemos una respuesta 204, que significa sin contenido. 
+
+Ahora para revisar si se actualizo el contenido cambiamos a GET.
+    manteniendo el ID en la URL y Send. 
+        Ahora nos vuelve a mostrar codigo 200 y nos devuelve la 
+        informacion del usuarion con el nuevo nombre y descripcion 
+        actualizado pero con el mismo ID. 
+    
+Para eliminar un recurso cambiamos a DELETE y le damos Send.   
+    Y nos devuelve un status 204, nos queda volver a GET y 
+    con el mismo ID de usuario buscar si existe: 
+        Devuelve 200 pero no hay ningun objeto en la respuesta. 
+
+Y si volvemos a buscar por todas las comidas GET: 
+    localhost:3000/api/meals/ 
+        Vuelve a mostrar el arreglo vacio. 
+        
+
+
+
+

@@ -1,0 +1,36 @@
+Almuerzi es un APP que se dedica a conectar a las personas 
+que estan trabajando con un chef. 
+El chef prepara diferentes platos de comida. 
+que luego de cocinarla la lleva en un vehiculo para dejarlo
+a sus clientes. 
+
+La app va a ser para los clientes para que ellos puedan 
+realizar sus pedidos. 
+Por medio de un sistema automatizado que le ayude a escalar 
+su negocio. 
+
+
+Los usuarios van a poder elegir los diferentes platos y el 
+chef lo empieza a preparar para poderlo enviar a sus clientes. 
+
+Modelo de datos: 
+tabla o coleccion de platos
+ID de plato
+Nombre del plato
+descripcion del plato
+
+Pedidos:
+ID de pedido
+meal_id que va a ser el ID del plato que el usuario pidio.
+user_id
+
+
+Guardar los datos dentro de una base de dato. 
+- ordenes de los clientes 
+- platos de comida que generan los chefs
+
+
+- Agregar la IP desde mongoDB para dar el 
+    acceso local. 
+
+- Agregar acceso desde cualquier lado en IP access desde MongoDB

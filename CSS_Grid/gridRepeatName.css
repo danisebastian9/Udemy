@@ -1,0 +1,20 @@
+body {
+    background-color: #eee;
+}
+
+.grid {
+    display: grid;
+    grid-template-rows: repeat(2, [row-start] 50px [row_end]);
+    grid-template-columns:repeat(3, [col-start] 1fr [col-end]);
+    row-gap: 20px;
+    column-gap: 10px;
+}
+
+.element {
+    background-color: rgba(255, 0, 0, 0.568);
+}
+
+.header {
+    grid-column: col-start / col-end 3;
+    grid-row: row-start / row-end 3;
+}

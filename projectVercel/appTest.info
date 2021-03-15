@@ -1,0 +1,4 @@
+serverless is the first app created through vercel in which 
+    we created a custom build and launch it through
+    the vercel servers, showing a message saying "Hola Mundo" 
+        Through an added path /api/index

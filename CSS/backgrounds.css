@@ -1,0 +1,13 @@
+body {
+    background-color: #eee;
+}
+
+.background {
+    height: 300px;
+    background-color: green;
+    background-image: url(https://placekitten.com/200/300);
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-attachment: fixed;
+    background-size: cover;
+}

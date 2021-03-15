@@ -1,0 +1,22 @@
+body {
+    background-color: #eee;
+}
+
+menu {
+    position: fixed;
+
+}
+
+p {
+    max-width: 400px;
+    background-color: teal;
+    margin: auto;
+    position: relative;
+    left: 40px;
+    top: 15px;
+    bottom: 0px;
+}
+
+div {
+    text-align: right;
+}

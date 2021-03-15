@@ -1,0 +1,11 @@
+Flexbox is intended for one line 
+(1column 1 row) tables. 
+It's going to work as grid but with a more
+dedicated path by not having multiple boxes the
+same size, but having each box at its own proper and needed
+space. 
+
+columns are not going to be aligned between them.
+
+* "flex-direction: " will manage the way the data is displayed
+    through the flexbox.

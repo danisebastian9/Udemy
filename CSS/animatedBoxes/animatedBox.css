@@ -1,0 +1,43 @@
+body {
+    background-color: #eee;
+}
+
+.boxes div {
+    font-weight: bold;
+    margin: 15px;
+    padding: 20px;
+    text-align: center;
+    background-color: white;
+    width: 200px;
+    box-shadow: 2px 2px 4px rgba(90, 90, 90, 0.616);
+}
+
+.red {
+    border-left: solid rgb(201, 35, 35);
+    transition: 0.2s;
+}
+
+.red:hover {
+    transform: scale(1.05,1.05);
+    cursor: pointer;
+}
+
+.green {
+    border-left: solid green;
+    transition: 0.2s;
+}
+
+.green:hover {
+    box-shadow: 5px 5px 8px rgba(90, 90, 90, 0.616);
+    cursor: pointer;
+}
+
+.blue {
+    border-left: solid blue;
+    transition: 0.8s;
+}
+
+.blue:hover {
+    background-color: rgb(179, 179, 243);
+    cursor: pointer;
+}

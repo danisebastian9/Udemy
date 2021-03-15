@@ -1,0 +1,31 @@
+DOM es todo el arbol HTML que vamos a tener dentro de una pagina web una vez construido. 
+La representacion que va a ser plasmada e 
+
+
+//alert("Welcome to my DOM")
+
+Will create a window alert in the website.
+
+
+seleccionar todos los valores generados en HTML desdde el codigo. 
+En este caso los valores asignados a una lista con un id=todo-list y a parte especificando que se esta accediendo a los li listed items. 
+
+//const elementos = document.querySelectorAll("#todo-list li")
+
+//Array.from(elementos)  
+
+convierte los elementos de esa lista de resultados generada en un array con todos los valores.
+
+//elementos.forEach(x => console.log(x))
+
+Crea una funcion con una lista seleccionable de todos los elementos generados en este caso el li
+
+//localStorage  
+
+permite guardar elementos en la cache del browser y para tambien poder leerlos. 
+
+//localStorage.setItem("lala", "chanchito feliz") 
+
+Siempre tienen que ser string ambos valores. 
+
+//localStorage.getItem("lala") devuelve = "chanchito feliz" 

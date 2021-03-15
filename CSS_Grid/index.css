@@ -1,0 +1,16 @@
+body {
+    background-color: #eee;
+}
+.grid {
+    display: grid;
+    grid-template-rows: 50px 100px;
+}
+
+.element {
+    background-color: red;
+}
+
+.gridColumns {
+    display: grid;
+    grid-template-columns: 1fr 30% 3fr;
+}

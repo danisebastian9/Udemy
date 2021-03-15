@@ -1,0 +1,17 @@
+dentro de la carpeta donde se va a hacer el proyecto con nodeJS 
+    se abre la consola en esa locacion y se pone el siguiente
+    parametro: 
+        npm init -y 
+            Este va a generar un archivo package.json
+
+Instalar Express en la misma locacion:
+    npm i -S express
+
+el host se llama en el browser con:
+    localhost:3000  o cualquier server 8000 8080
+
+(*) // Significa recibe absolutamente todo. 
+
+.send  // se utiliza para enviarle cosas al explorador. 
+
+

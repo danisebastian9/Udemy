@@ -1,0 +1,27 @@
+.flex {
+    display: flex;
+    height: 200px;
+    flex-flow: row wrap;
+}
+
+.red {
+    background-color: red;
+}
+
+.first {
+    flex-grow: 1;
+    flex-basis: 40px; /* The initial width */
+  /*flex: flex-grow flex-basis; */
+}
+
+.second {
+    flex-grow: 1;
+    align-self: center;
+}
+
+.third {
+    flex-grow: 2; /* third item will use 2 times
+                    the space the first one is going 
+                    to use. */
+    align-self: flex-end;
+}

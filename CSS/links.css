@@ -1,0 +1,33 @@
+body {
+    background-color: #eee;
+}
+a {
+    color: rgb(255, 255, 255);
+    background-color: rgb(235, 47, 47);
+    padding: 7px;
+    letter-spacing: 2px;
+    border-radius: 5px;
+    border: solid 1px rgb(173, 0, 0);
+}
+
+a:link {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+a:visited {
+    color: rgb(255, 255, 255);
+}
+
+a:hover {
+    color: rgb(255, 255, 255);
+    text-decoration: underline;
+    background-color: rgb(173, 0, 0);
+}
+
+a:active {
+    color: rgb(173, 0, 0);
+    font-weight: bold;
+    background-color: rgb(255, 255, 255);
+    border: solid 2px rgb(173, 0, 0);
+}

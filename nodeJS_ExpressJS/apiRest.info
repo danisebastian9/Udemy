@@ -1,0 +1,51 @@
+Una API REST es una interfaz en la nube que permite 
+    los clientes se contecten en la nube para soliticar datos
+    La API se conecta con una base de datos para solicitar los datos
+    que necesita el cliente y los devuelve a la API. Para finalmente
+    responder al cliente con la informacion solicitada. 
+
+
+Consumir API:
+
+Verbos HTTP
+
+GET   ---> Para buscar elementos.
+POST  ---> Para crear un recurso.
+PUT   ---> Reemplazar un recurso.
+Patch ---> Actualizar un recurso. reemplazar parcialmente
+Delete --> Eliminar recursos. 
+
+Para llamar a la API toca hacerlo indicando un recurso. 
+    En este caso van a ser usuarios, pueden ser productos, 
+    ventanas, widgets, twits y demas que se pueda recolectar de una
+    base de datos. 
+
+En este caso que queremos llamar usuarios es llamar a la ruta
+    de la api: 
+        GET/users/
+
+Y en el caso que sea un elemento en particular va a ser llamado a: 
+    GET/users/:id
+        Va a devolver codigo de status HTTP: 200
+
+Para crear un elemento se utiliza:
+    POST/users
+        Va a devolver codigo de status HTTP: 201
+
+Para reemplazar un elemento: 
+    PUT/users/:id
+        Va a devolver codigo de status HTTP: 204
+
+Para actualizar un elemento o reemplazar parcialmente un elemento.
+    PATCH/users/:id
+        Va a devolver codigo de status HTTP: 204
+
+Para eliminar un elemento se usa:
+    DELETE/users/id
+        Va a devolver codigo de status HTTP: 204
+
+PUT y PATCH a veces se utilizan con el mismo objetivo para parcialmente un recurso.
+
+
+
+

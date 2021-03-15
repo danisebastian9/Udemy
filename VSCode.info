@@ -1,0 +1,7 @@
+Single line comment:   Ctrl + K + C
+Single line uncomment: Ctrl + K + U 
+
+Multi line comment:    Alt +  shift + A
+Multi line uncomment:  Alt +  shift + A
+
+Select multiple lines: shift + upArrow or downArrow.

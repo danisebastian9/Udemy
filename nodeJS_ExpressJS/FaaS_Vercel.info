@@ -1,0 +1,57 @@
+Proveedor para el Function as a Service. 
+
+VERCEL
+
+Para iniciar Vercel se corre el siguiente codigo 
+    dentro de gitBash:
+
+vercel init. 
+
+Luego se selecciona una lista de proyectos en el cual basarnos. 
+    Seleccionamos Custom build
+
+Lo renombramos de custom build a Serverless por ejemplo 
+    y accedemos a este usando cd en el CMD
+
+Dentro de la carpeta del proyecto se llama en el CMD a:
+
+vercel
+
+Then // YES I want to deploy my app.
+    Then confirm the user: Enter
+    If there's a proyect vinculate it, or not. 
+    Then Confirm the proyect name. 
+    confirm the proyect location: ./  means the same actual location. 
+
+    In this case we don't want to overwrite the settings. 
+
+    The App information is provided including the inspection link 
+
+    De ahora en adelanta se va a utilizar Vercel para interactuar con la app. 
+
+    Creamos una carpeta dentro de nuestra app al lado de ".vercel". 
+        En este caso API y ahi creamos los archivos .js
+
+Para correr la app. Dentro de CMD  y la locacion de la APP se ejecuta: 
+
+vercel  
+
+Luego se accede a la URL de preview en el buscador. 
+    Luego se le agrega el resto de la ruta, en este caso: 
+
+api/index 
+
+Y se muestra la app creada. 
+
+
+
+Para descargar las variables de entorno de Vercel usamos en el CMD
+    desde la direccion de la App: 
+        vercel env pull
+
+
+Para hacer andar la Aplicacion: 
+    Para intentar andar la aplicacion desde la App donde se ha 
+    estad usando vercel, ejecutamos: 
+        vercel dev 
+            vercel.json tiene que estar agregado y bien configurado.

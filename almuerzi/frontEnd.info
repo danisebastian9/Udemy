@@ -1,0 +1,22 @@
+Luego de hacer el backend vamos a desplegar el front end para 
+    mostrarle nuestra app al usuario. 
+
+1. La aplicacion va a ser muy sencilla. 
+- va a estar separada en 2 bloques. 
+    A la izquierda vamos a tener todos nuestros platos "Meals"
+    Vamos a tener una UL donde vamos a LI listar cada plato. 
+    Generamos un boton en formulario. Para generar orden. 
+    Que al presionar va a mirar cual de los Meals esta seleccionado
+    Y hara un llamado al servidor para agregar la orden a "Orders". 
+    Mientras carga y se crea la orden el boton de "Generar orden" va
+    a estar bloqueado. 
+    
+
+    Al costado derecho vamos a tener nuestras Orders y las vamos
+    a traer desde el servidor mostrandolas en otra UL unordered list. 
+    Las ordenes las vamos a ir trayendo a al hacer click a uno 
+    de los platos de Meals de la izquierda. 
+        Al hacer click en un plato, las ordenes se van a borrar 
+        momentaneamente, mostraremos un texto de "Cargando" 
+        Y cuando deje de cargar mostraremos el listado de nuevo. 
+    

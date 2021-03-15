@@ -1,0 +1,49 @@
+body {
+    background-color: rgba(220, 220, 220, 0.89);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.myBox {
+    background-color: whitesmoke;
+    margin: 10px;
+    border-style: solid;
+    border-top-style: unset;
+    border-width: 1px;
+    border-color: rgb(196, 190, 190);
+    border-radius: 2px;
+}
+
+.boxHeader {
+    border-bottom: inherit;
+    padding: 8px;
+    margin-bottom: 0px;
+}
+
+.boxBody {
+    border-bottom: inherit;
+    padding: 10px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.boxFooter {
+    padding: 15px;
+}
+
+.footerButton {
+    border-radius: 0px;
+    border-style: solid;
+    color: cornsilk;
+    padding: 4px;
+    outline: transparent;
+}
+
+#acceptButton {
+    background-color: rgba(9, 95, 255, 0.938);
+    border-color: rgba(9, 95, 255, 0.938);
+}
+
+#cancelButton {
+    background-color: rgb(143, 143, 143);
+    border-color: rgb(143, 143, 143);
+}

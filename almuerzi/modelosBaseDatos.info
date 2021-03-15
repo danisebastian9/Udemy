@@ -1,0 +1,41 @@
+Para construir los modelos de bases de datos de meals y orders
+para luego usar estas referencias y buscar, guardar, 
+borrarlos o actualizar los elementos
+
+Creamos una carpeta dentro de la carpeta de api llamada models. 
+/api/models
+
+y creamos nuestro primer archivo modelo: 
+    meals.js
+
+const Schema = mongoose.Schema  
+    vamos a poder crear o definir modelos en codigo. 
+
+mongoose.model()
+    para crear un modelo con mongoose. Y dentro de este
+    poner el nombre del modelo en singular.
+        mongoose.model("Meal",)
+            luego definimos un schema con new Schema
+                mongoose.model("Meal", new Schema)
+                    y dentro de new Schema vamos a agregar un objeto literal. 
+                        mongoose.model("Meal", new Schema({}))
+
+
+
+para orders.js 
+Vamos a indicar el plato de comida pero tiene que componerse
+de un usuario y el plato con su referencia. 
+Le indicamos el ID que va a tener el plato de comida. 
+    Todos los documentos creados dentro de mongoose o Mongo van 
+    a tener un identificador unico e irrepetible, 
+    nosotros le vamos a llamar ID y vamos a acceder a el con 
+    la propiedad _id
+
+Schema tambien tiene otra propiedad llamada .Types en el cual 
+    le podemos indicar que tipo de datos vamos a guardar.
+    Como en este caso un .ObjectId, 
+        Al ser un ObjectId le estamos indicando que lo que estamos
+        guardando es el identificador de otro documento. en este caso 
+        es de un documento "Meal" 
+            { type: Schema.Types,Objectid, ref: "meal"}
+

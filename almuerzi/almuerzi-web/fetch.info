@@ -1,0 +1,70 @@
+Es nuestra primera instruccion con promesas. 
+
+Le pasamos la URL donde se despiegan nuestros contenidos de la lista. 
+    En este caso: https://almuerzi-app.danisebastian9.vercel.app/api/meals
+
+Seguido ejecutamos .then y le pasamos una funcion que recibe como argumento response. 
+    Y response va a tener un metodo que se va a llamar .json
+
+Luego  volvemos a llamar a .then que es donde vamos a recibir la data. 
+    Y aqui vamos a poder imprimir en consola lo que tiene data. 
+    
+la API de fetch nos permite llegar a rutas y poder interpretar lo que nos va a 
+    devolver. cumple con la interfaz de promesas
+    - Se utiliza .then siempre que se usa fetch 
+        Como es un metodo tiene que haber una funcion con la respuesta
+        del llamado que hemos hecho antes. 
+            response.json() 
+                El texto que recibimos lo convertimos a json
+            response.text()
+                o a texto en este caso. 
+
+Con fetch tambien podemos cambiar la peticion que estamos realizando. 
+    method, nos permite cambiar el tipo de llamado:
+        "GET", "POST", "PUT", "DELETE"
+    mode: cambiamos el modo que hacemos el llamado, en este caso:
+        "cors"
+    Incdicamos si queremos utilizar cache. 
+        "no-cache"
+    credentials, indicamos si queremos utilizar credenciales al momento
+    de contactar el servidor. En este caso: 
+        "same-origin"
+    headers, las cabeceras son tipos de datos que podemos agregar
+    con cada peticion, el tipo de dato que queremos de vuelta, 
+    la cookie o sesion utilizada para que sepa quien somos nosotros,
+    un ID para identificar el usuario en el servidor. 
+        "content-type":  "application/json"
+    
+    Indicar si queremos ser redirijidos cuando contactemos al servidor. 
+    redirect: "follow" si el servidor nos reenvia a otro sitio web,
+        le indicamos que nos siga y obtener los datos de esta pagina.
+    
+    Body: Enviarle datos a traves del body:
+        Cuando se hace un llamado como GET o PUT...
+        podemos enviarle mas datos a traves del body del mensaje, 
+            en este caso los datos siempre viajan como String,:
+                JSON.stringify()
+    
+SI no se pone ningun dato por default va a tomar GET.    
+
+    EXAMPLE: 
+
+method: "GET",
+mode: "cors",
+cache: "no-cache",
+credentials: "same-origin",
+headers: {
+    "Content-Type": "application/json"
+},
+redirect: "follow",
+body: JSON.stringify({ user: "lala", password: "chanchito"})
+
+
+
+
+.then(data => console.log(data)) 
+    muestra la informacion de la URL extraida por fetch en el console. 
+
+.join
+    nos va a convertir el array generado por map en string.
+

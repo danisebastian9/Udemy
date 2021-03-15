@@ -1,0 +1,17 @@
+body {
+    background-color: bisque;
+}
+
+.box {
+    margin: 5px;
+    background-color: coral;
+    border-style: solid;
+    border-width: 6px;
+    border-color: crimson;
+    padding: 8px;
+    border-radius: 50px;
+    text-align: center;
+    height: 20px;
+    width: 50%;
+    color: rgb(75, 61, 40);
+}

@@ -1,0 +1,33 @@
+Despues de crear nuestro cluster en MongoDB hacemos click en: 
+
+Connect. 
+
+En este caso nos vamos a conectar con nuestra aplicacion.
+
+Driver and version. En este caso es Node.js y 3.6 or later
+
+Nos va a dar una URL en el caso que queramos ingresar a nuestra App:
+
+mongodb+srv://<username>:<password>@almuerzi-db.ktbgi.mongodb.net/<dbname>?retryWrites=true&w=majority
+    IMPORTANTE. COPIAR LA URL EXACTA, NO AGREGAR ESPACIOS NI CARACTERES O FALLA AL LLAMAR A MONGODB.
+
+Donde en este caso nos indica que tenemos que reemplazar la:
+    <username>:<password> por la contraseña del usuario que vamos a crear luego. 
+
+Nos indica. la base de datos que tenemos que indicarle:
+    <dbname>
+
+Agregando una base de datos de prueba en este caso. 
+    Nuestro servicio de Mongo cuando le insertemos un dato va a
+    crear la base de datos por nosotros. 
+
+URL de nuestro cluster: 
+
+mongodb+srv://<username>:<password>@almuerzi-db.ktbgi.mongodb.net/<dbname>?retryWrites=true&w=majority
+
+Para crear un usuario que administre el cluster dando click en: 
+    Database access. 
+
+And select Add new database user. This is going to create an 
+    admin user able to access the data base and manage it. 
+

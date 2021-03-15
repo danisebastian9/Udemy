@@ -1,0 +1,28 @@
+En index.js vamos a cambiar esta parte del codigo: 
+
+app.get("*", (req, res) => {   // hace que cualquier ruta URL despliegue el contenido a continuacion.
+    res.send("Chanchito Feliz")
+})
+
+
+Con el fin de darle mas estructura y que no nos quede todo el codigo que
+    escribamos dentro de index.js
+
+Vamos a crear nuevos archivos dependiendo de las nuevas rutas que vayamos creando. 
+
+.use lo podemos usar para pasarle rutas a nuestra aplicacion. 
+    use("/ruta") cuando le ponemos string, detecta automaticamente
+        que le estamos indicando una ruta. 
+    
+    app.use("/api/meals", meals)
+        meals va a ser una instancia de un router de la aplicacion. 
+            const meals = app.router()
+
+    meals.get() Le pasamos la URL que queremos que este maneje. en este
+        caso la raiz "/", recibir los requests y response y luego la 
+        logica a ejecutar cuando llegue a la ruta raiz "/". 
+            meals.get("/", (req, res) => { })
+
+
+pero TODO este codigo lo vamos a importar desde otro archivo. Para eso creamos:
+    const meals = require("./routes/meals")

@@ -1,0 +1,47 @@
+Para ejecutar la app en local tenemos que tener las variables
+de entorno configuradas en el equipo y hay dos formas de hacerlo.
+
+1. Crear un archivo .env creando las variables de entorno necesarias
+2. Descargandolas desde vercel.
+    Para la segunda vamos a utilizar en el CMD en la carpeta
+    de la App /almuerziApp: 
+        vercel env pull
+
+
+Creamos en la carpeta principal de la APP /almuerziApp un archivo
+    vercel.json
+        tiene que contener la siguiente configuracion: 
+            {
+                "rewrites": [
+                    { "source": "/(.*)", "destination": "/api/index"}
+                ]
+            }
+
+    "rewrites" tiene que ir con comillas dobles. Esta propiedad
+    busca el objetivo de tomar todas las peticiones hechas a la App
+    y redirijirlas siempre a la misma ruta. 
+    De esta manera vamos a utilizar 1 archivo para manejar todas
+    las peticiones de nuestra API y lo vamos a hacer desde este archivo. 
+
+    1. Indicandole que vamos a pasarle un Array dentro de la configuracion: 
+        [   { "source": "/(.*)", "destination": "/api/index"}  ]
+    2. Es un objeto literal: 
+        { "source": "/(.*)", "destination": "/api/index"}
+            Que contendra la propiedad de sources. Como es .JSON va con comillas dobles. 
+                /(.*) MUY IMPORTANTE sino va a dar problemas y no va a correr el servidor. 
+                    Luego la direccion a donde vamos a redirijir todas las 
+                    peticiones. En este caso a: 
+                        /api/index
+
+
+Luego vamos a la terminal la carpeta de la App /almuerziApp
+    para intentar andar l a aplicacion usando: 
+        vercel dev
+            vercel.json tiene que estar agregado y bien configurado. 
+                IMPORTANTE: "rm" es un comando de linux 
+                no reconocido por Windows.
+                    En el archivo "package.json", en scripts, pudes remplazar "rm" por "DEL"
+                    O instalar gitbash. 
+
+
+

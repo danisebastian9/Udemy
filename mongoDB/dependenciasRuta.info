@@ -1,0 +1,119 @@
+Instalaremos dependencias para el proyecto y crearemos una ruta para 
+    que podamos probar todas estas dependencias instaladas.
+
+Dentro de la ubicacion de nuestro proyecto en el CMD, en este caso: 
+
+.../Development/Udemy/AlmuerziApp
+
+Agregamos: 
+
+npm i -S express mongoose body-parser cors
+
+
+mongoose: Es la libreria que vamos a utilizar para conectarnos
+    a mongoDB, cumple con ser una capa que se pone encima de 
+    mongoDB que viene incluido en esta libreria.
+
+body-parser: Esta libreria va a tomar todas las peticiones 
+    que hagamos al servidor y las transformara en JSON.
+    Si no usamos esta libreria no vamos a poder identificar
+    todas las peticiones que nos lleguen al servidor. 
+
+cors: Es una libreria que permite habilitar la peticion desde 
+    URL's distintas, importante cuando construyamos nuestro
+    cliente en futuro. 
+    Para cuando estemos desarrollando en local e intentemos 
+    conectarnos al servidor, este nos va a arojar un error 
+    de cors diciendo que nuestro servidor no esta permitiendo
+    llamadas desde distintos dominios. Siendo el dominio de 
+    nuestro servidor arriba en la nube donde se encuentra 
+    nuestro servicio de vercel y la otra URL nuestro localHost
+    que es donde estamos desarrollando, (nuestra propia maquina)
+
+    Al habilitar cors vamos a permitar que el servidor acepte
+    peticiones  desde URL's que no son la suya. 
+    Esto nos va a servir cuando estemos desarrollando. 
+
+
+
+Importamos express en "string" utilizando require y asignandolo 
+a una constante express
+
+
+Se utiliza el mismo nombre de la carpeta del modulo express = "express" utilizando require. 
+
+
+Creamos nuestra aplicacion de express. 
+Creamos constante y ejecutar nuestra funcion de express. 
+    const app = express()
+Va a devolver un objeto con diferentes metodos para nosotros
+poder crear la aplicacion. 
+
+    app.use() 
+.use Es un metodo que nos va a permitir agregar plugins a nuestro
+servidor de express para agregar funcionalides a nuestro servidor. 
+
+En este caso agregamos la funcionalidad de body parser
+    app.use(bodyParser.json())
+bodyParser tiene un metodo llamado .json()
+Que este nos devuelve un plugin para utilizar con app.use
+
+Luego agregamos otro plugin, el de cors. 
+    app.use(cors())
+cors es ejecutada con esa funcion y esta va a devolver un plugin 
+    para ser utlizada en express. 
+
+Luego agregamos la conexion de nuestra base de datos con mongoose. 
+    mongoose.connect(process.env.MONGO_URI { useNewUrlParser: true, useUnifiedTopology: true})
+Esta instruccion es para poder conectarnos con nuestro servidor
+de bases de datos que hemos creado en Mongo atlas 
+    .connect es el metodo que nos permite determinar que nos hemos
+        conectado a la base de datos.  
+    process.env nos permite acceder a las variables de entorno: MONGO_URI no creada aun. 
+
+    useNewUrlParser: true, useUnifiedTopology: true: Objeto de
+        configuracion son necesarias para intretar la URL con 
+        el formato que le vamos a pasar aca (process.env.MONGO_UR)
+        si no lo hacemos nos va a indicar un warning si estan 
+        deshabilitadas indicando que estamos trabajando con una
+        version deprecada de la libreria. 
+    
+
+Todos los plugins tienen formas diferentes de ser utilizadas
+    como para conectarse en este caso con express y en el caso de 
+    cada libreria o plugin toca ir a la documentacion de estas para 
+    ver como se configuran con express en este caso. 
+
+
+Cuando se hace el deploy de "vercel" desde el CMD en la carpeta
+    de la app, en este caso "almuerziApp" la URL de preview no nos
+    va a mostrar nada porque la URL que le indicamos a mongoose esta
+    vacia, va a dar error porque no hemos seteado la variable de 
+    entorno para poder conectarnos a Mongo. 
+
+tenemos que entrar al link de  inspect.
+    click en el nombre del app arriba "almuerzi-app"
+    luego settings. hace click en:
+    Environment Variables. 
+    Para indicarle las variables de entorno que vamos a usar 
+    para conectarnos a los diferentes servicios. 
+    En Type ponemos plain text. 
+    en Name ponemos el nombre de la variable en nuestro index.js
+    en este caso "MONGO_URI"
+    En Value ponemos la URL de nuestro cluster que habiamos copiado de MongoDB 
+    con los valores de usuario y contraseña configurados asignados al
+    usuario configurado de MongoDB.
+        En este caso <username> = almuerzimaster
+        y <password> = la contraseña asignada
+        el nombre de la base de datos <dbname> = en este caso  almuerzi-db
+        
+
+mongodb+srv://almuerzimaster:tbkQEVEWHS8obose@almuerzi-db.ktbgi.mongodb.net/almuerzi-db?retryWrites=true&w=majority 
+    IMPORTANTE: PEGAR URL SIN ESPACIOS NI CARACTERES ADICIONALES
+
+Y agregamos este mismo valor a los environments de: 
+    Production, Preview y Development. 
+
+Hacemos un despliegue de nuevo "vercel" en CMD y esta conectada la 
+    base de datos con la APP. 
+

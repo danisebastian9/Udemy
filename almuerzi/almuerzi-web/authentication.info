@@ -1,0 +1,72 @@
+Cuando un usuario quiere ingresar a nuestra API y no sabemos quien es
+    ese usuario no esta autenticado, cuando sabemos quien es por
+    medio de las credenciales sabemos que esta autenticado por 
+    medio de un usuario y contraseña cuando sus credendiales hacen 
+    match con las que estan en nuestra base de datos. 
+        Al hacer match, se le va a otorgar una llave que le va
+        a permitir ciertas peticiones al servidor. Y con cada peticion
+        nosotros sabemos quien es el que esta haciendo la peticion.
+
+
+
+- REGISTRO.
+Para el registro tenemos que darle a nuestro usuario un usuario y
+    contraseña con la cual podra acceder al servicio, cuando el 
+    genera este usuario y contraseña queda guardada en nuestra base 
+    de datos la cual no puede ser ingresada en texto plano, la 
+    contraseña tiene que ser guardada encriptada para proteger la 
+    identidad de nuestros clientes en contra de hackers.
+    - sha1
+    - md5 
+    U otro algoritmo puede ser utilizado para encriptar nuestras 
+        contraseñas. La encriptacion va a ser volver la contraseña 
+        irreconocible por medio de una cadena de caracteres muy larga.
+
+    En nuestra base de datos vamos a guardar el nombre de usuario 
+    sin encriptacion y la contraseña encriptada. 
+        De manera que cuando el usuario intente ingreser su usuario
+        tiene que hacer match, la contraseña que agregue le vamos 
+        a agregar la misma encriptacion y validaremos si coincide. 
+
+Pero esta seguridad no es suficiente, en el caso que un hacker se 
+    robe la base de datos si averigua el algoritmo utilizado para 
+    encriptar las contraseñas, las puede desencriptar y borrar, asi 
+    que nosotros, cuando nuestro usuario llame a nuestro endpoint 
+    de registro le vamos a pasar el username y el password, este
+    ultimo lo vamos a encriptar con alguno de los metodos disponibles
+    y luego vamos a crearle una cadena de caracteres aleatoria con la 
+    que vamos a encriptar la contraseña y nos va a devolver una cadena
+    de caracteres totalmente diferente a la generada = salt. 
+    Cuando el hacker robe nuestra base de datos tendra que desencriptar 
+    dos cadenas de caracteres totalmente distintas y va a ser mucho mas 
+    dificil si no es que imposible de que saque la informacion correcta. 
+
+Para crear nuestro usuario tenemos que crear: 
+   - username / email address
+   - password
+   - salt
+Entonce cuando el usuario inicie sesion tomamos la contraseña y el nombre
+    de usuario y esta contraseña vamos a buscar el usuario en la base de 
+    datos, la vamos a encriptar con el salt que encontremos de este usuario
+    Si el resultado es igual que algo muy aleatorio, el usuario es autenticado
+    con exito. 
+        Si no, devolvemos que el usuario o la contraseña son incorrectos,
+        ya que si atacan la base de datos con nombres de usuario aleatorios
+        no le podemos indicar cuando acerta con un usuario, o le acerta a ambos
+        o devolvemos que el usuario y/o contraseña son incorrectos. 
+
+
+despues de correr vercel dev 
+    Dice Cannot GET /api/auth/register
+        Para esos necesitamos hacer un POST a http://localhost:3000/api/auth/register
+        con POSTMAN
+    
+
+Middlewares es una funcion en Node que va a recibir request, response
+    pero tambien recibe next. Y cuando llamemos a next va a ejecutar el
+    middleware:
+        
+
+
+
+ 

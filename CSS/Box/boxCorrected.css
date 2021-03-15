@@ -1,0 +1,40 @@
+body {
+    background-color: #eee;
+}
+
+.box {
+    background-color: #fff;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #ccc;
+    border-radius: 2px;
+    border-top: solid 0px;
+}
+
+.header {
+    padding: 10px;
+    border-bottom: solid 1px #eee;   
+}
+
+.content {
+    padding: 10px;
+}
+
+.footer {
+    padding: 10px;
+    border-top: solid 1px #eee;
+}
+
+.primary {
+    background-color: #0090ff;
+    border: 0px;
+    padding: 5px;
+    color: #fff;
+}
+
+.secundary {
+    background-color: #aaa;
+    border: 0px;
+    padding: 5px;
+    color: #fff;
+}

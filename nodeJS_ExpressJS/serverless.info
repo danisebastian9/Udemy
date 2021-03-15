@@ -1,0 +1,34 @@
+Aplicacion movil o cliente web que van a hacer peticion a los servidores y estos van administrar y gestionar la carga. 
+
+Tenemos que hacer que los servidores toleren la cantidad the carga entre servidores. 
+    (load balancer)
+    encargarnos del trafico que tiene la red. 
+    De aumentar o disminuir la memoria
+    y tambien CPU que tienen los servidored. 
+    TODO ESTO ES LO ANTIGUO.
+
+Ahora con serverless o FAAS(Function as a server)
+    se encargan de todos esos servicios por nosotros. 
+
+Lo que nosotros hacemos como desarrolladores vamos a escribir
+    archivos y los subimos a la nube. 
+    Y esta nube a medida que se le hagan peticiones esta se va 
+    a encargar de montar el archivo en su estructura de servidores
+    y lo va a guardar dentro de una base de datos en la nube (ejecucion en frio). 
+    para que cuando se vuelva a llamar al archivo, la nube va a buscarla
+    en su propia estructura la base de datos y si se deja de usar el
+    archivo la nube lo borra de la memoria de los servidores. 
+
+Con eso no administramos servidores. 
+    Es mas economico.
+    Solo se paga lo que se utiliza. 
+
+Solo tiene un problema. 
+
+Ejecucion en frio = Cuando la nube lo saca de la nube y lo manda al disco
+Ejecucion en caliente = Cuando el archivo se encuentra todavia en la nube
+
+    Cuando se ejecuta en frio tiene que ir a buscar la informacion al disco.
+
+    Vamos a usar Express para que la ejecucion se haga en caliente lo mas posible
+
